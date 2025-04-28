@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bienvenue sur notre site de prêt. Nous proposons des prêts personnels, auto, étudiant et plus encore.">
+    <meta name="keywords" content="prêt, financement, emprunt, prêt personnel, prêt auto, prêt étudiant">
+    <meta name="author" content="Ton nom ou le nom de ton entreprise">
+    <meta property="og:title" content="Site de Prêt - Financement rapide et flexible">
+    <meta property="og:description" content="Explorez nos solutions de prêt adaptées à vos besoins : personnel, auto, urgence et bien plus.">
+    <meta property="og:image" content="URL_de_ton_image.jpg">
+    <meta property="og:url" content="http://www.tonsite.com">
+    <title>Site de Prêt</title>
+    <link rel="stylesheet" href="style.css">  
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>Bienvenue sur notre site de prêt</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="services.html">Nos services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>    
+  </header>
+
+  <main>
+    <section>
+      <h2>Solutions de prêt flexibles</h2>
+      <p>Nous proposons des prêts adaptés à vos besoins : personnel, auto, urgence et plus encore.</p>
+    </section>
+
+    <section>
+      <h2>Pourquoi nous choisir ?</h2>
+      <ul>
+        <li>Réponse rapide</li>
+        <li>Taux compétitifs</li>
+        <li>Accompagnement personnalisé</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Nos offres de prêt</h2>
+      <div class="offres">
+        <div class="offre">
+          <h3>Prêt Personnel</h3>
+          <p>Financez vos projets à votre rythme avec un prêt souple et sans justificatifs.</p>
+        </div>
+        <div class="offre">
+          <h3>Prêt Auto</h3>
+          <p>Roulez vers votre nouvelle voiture avec des conditions avantageuses.</p>
+        </div>
+        <div class="offre">
+          <h3>Prêt Étudiant</h3>
+          <p>Soutenez vos études grâce à un prêt adapté aux jeunes et aux familles.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Calculateur de Prêt -->
+    <section id="calculateur">
+      <h2>Calculateur de Prêt</h2>
+      <form id="form-prets">
+        <label for="montant">Montant du prêt :</label>
+        <input type="number" id="montant" name="montant" placeholder="Exemple : 10000" required>
+
+        <label for="taux">Taux d'intérêt (%) :</label>
+        <input type="number" id="taux" name="taux" placeholder="Exemple : 5" required>
+
+        <label for="duree">Durée (en années) :</label>
+        <input type="number" id="duree" name="duree" placeholder="Exemple : 5" required>
+
+        <button type="submit">Calculer</button>
+      </form>
+
+      <div id="resultat" style="margin-top: 20px;">
+        <p id="mensualite"></p>
+      </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section>
+      <h2>Contactez-nous</h2>
+      <form>
+        <label for="nom">Nom :</label><br>
+        <input type="text" id="nom" name="nom" placeholder="Votre nom"><br><br>
+
+        <label for="email">Email :</label><br>
+        <input type="email" id="email" name="email" placeholder="Votre adresse email"><br><br>
+
+        <label for="message">Message :</label><br>
+        <textarea id="message" name="message" rows="4" placeholder="Votre message..."></textarea><br><br>
+
+        <button type="submit">Envoyer</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Mon Site de Prêt - Tous droits réservés</p>
+  </footer>
+
+  <!-- Script pour le Calculateur -->
+  <script>
+    function calculMensualite(montant, taux, duree) {
+      const tauxMensuel = taux / 100 / 12;
+      const nbMois = duree * 12;
+      const mensualite = (montant * tauxMensuel) / (1 - Math.pow(1 + tauxMensuel, -nbMois));
+      return mensualite.toFixed(2);
+    }
+
+    document.getElementById('form-prets').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const montant = parseFloat(document.getElementById('montant').value);
+      const taux = parseFloat(document.getElementById('taux').value);
+      const duree = parseInt(document.getElementById('duree').value);
+
+      if (isNaN(montant) || isNaN(taux) || isNaN(duree) || montant <= 0 || taux <= 0 || duree <= 0) {
+        alert("Veuillez entrer des valeurs valides pour le prêt.");
+        return;
+      }
+
+      const mensualite = calculMensualite(montant, taux, duree);
+
+      const resultatElement = document.getElementById('resultat');
+const mensualiteElement = document.getElementById('mensualite');
+
+mensualiteElement.innerHTML = `
+  🎯 Félicitations ! Votre mensualité est de : <strong>${mensualite} €</strong> par mois.
+`;
+
+// Ajouter la classe visible pour lancer l'animation
+resultatElement.classList.add('visible');
+
+    });
+  </script>
+</body>
+</html>

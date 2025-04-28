@@ -1,0 +1,166 @@
+/* Général */
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f1f1f1;  /* Fond de la page */
+  color: #333;  /* Texte principal */
+}
+
+header {
+  background-color: #007bff;  /* Couleur de l'en-tête */
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+h1, h2, h3 {
+  color: #333;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  display: inline-block;
+}
+
+/* Couleurs des liens au survol */
+nav a:hover {
+  background-color: #ff7f50;  /* Couleur au survol */
+  color: white;
+}
+
+button {
+  background-color: #007bff;  /* Couleur des boutons */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Bouton au survol */
+button:hover {
+  background-color: #ff7f50;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+main {
+  padding: 20px;
+}
+
+/* Sections */
+section {
+  background: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Calculateur */
+#calculateur form {
+  display: flex;
+  flex-direction: column;
+}
+
+#calculateur label {
+  margin-top: 10px;
+}
+
+#calculateur input {
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#calculateur button {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #004aad;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#calculateur button:hover {
+  background-color: #003580;
+}
+
+#resultat {
+  margin-top: 20px;
+  font-weight: bold;
+  color: green;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #004aad;
+  color: white;
+  margin-top: 20px;
+}
+
+/* Animation d'apparition du résultat */
+#resultat {
+  margin-top: 20px;
+  font-weight: bold;
+  color: green;
+  font-size: 1.2em;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+#resultat.visible {
+  opacity: 1;
+}
+
+/* Styles pour les petits écrans (mobiles et tablettes) */
+@media (max-width: 768px) {
+  header {
+    text-align: center;  /* Centrer le texte de l'en-tête */
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: column;  /* Les liens seront empilés verticalement */
+    align-items: center;
+  }
+
+  nav a {
+    padding: 15px 0;
+  }
+
+  section {
+    padding: 15px;
+  }
+
+  button {
+    width: 100%;  /* Les boutons prennent toute la largeur de l'écran */
+    padding: 15px;
+  }
+}
+
