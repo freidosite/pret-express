@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Demande de Prêt</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <h1>Faire une demande de prêt</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="pret-personnel.html">Prêt Personnel</a></li>
+        <li><a href="pret-auto.html">Prêt Auto</a></li>
+        <li><a href="pret-etudiant.html">Prêt Étudiant</a></li>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="form-section">
+      <h2>Formulaire de demande</h2>
+      <form id="form-demande" class="form-container">
+        <label for="nom">Nom complet :</label>
+        <input type="text" id="nom" name="nom" placeholder="Ex : Jean Dupont" required />
+
+        <label for="email">Adresse email :</label>
+        <input type="email" id="email" name="email" placeholder="email@example.com" required />
+
+        <label for="type">Type de prêt :</label>
+        <select id="type" name="type" required>
+          <option value="">-- Sélectionnez un type --</option>
+          <option value="auto">Prêt Auto</option>
+          <option value="personnel">Prêt Personnel</option>
+          <option value="etudiant">Prêt Étudiant</option>
+        </select>
+
+        <label for="montant">Montant souhaité (€) :</label>
+        <input type="number" id="montant" name="montant" placeholder="Ex : 5000" required />
+
+        <label for="duree">Durée souhaitée (en années) :</label>
+        <input type="number" id="duree" name="duree" placeholder="Ex : 3" required />
+
+        <label for="message">Commentaires :</label>
+        <textarea id="message" name="message" rows="4" placeholder="Ajoutez des précisions si nécessaire..."></textarea>
+
+        <button type="submit" class="btn">Envoyer la demande</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Mon Site de Prêt - Tous droits réservés</p>
+  </footer>
+
+  <script>
+    document.getElementById('form-demande').addEventListener('submit', function (e) {
+      e.preventDefault();
+      window.location.href = "merci.html";
+    });
+  </script>
+</body>
+</html>

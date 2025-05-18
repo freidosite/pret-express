@@ -10,57 +10,62 @@
     <meta property="og:description" content="Explorez nos solutions de prêt adaptées à vos besoins : personnel, auto, urgence et bien plus.">
     <meta property="og:image" content="URL_de_ton_image.jpg">
     <meta property="og:url" content="http://www.tonsite.com">
+    <meta name="keywords" content="prêt personnel, prêt auto, financement, prêt étudiant, prêt urgent">
+    <meta name="description" content="Site de prêt flexible proposant des prêts personnels, auto, étudiants et plus encore. Découvrez nos solutions de financement adaptées à vos besoins.">
     <title>Site de Prêt</title>
     <link rel="stylesheet" href="style.css">  
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
+
 <body>
   <header>
     <h1>Bienvenue sur notre site de prêt</h1>
+    <p>Financer vos projets n'a jamais été aussi simple.</p>
     <nav>
       <ul>
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="a-propos.html">À propos</a></li>
-        <li><a href="services.html">Nos services</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
+        <li><a href="a-propos.html"><i class="fas fa-info-circle"></i> À propos</a></li>
+        <li><a href="services.html"><i class="fas fa-credit-card"></i> Nos services</a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>        
       </ul>
-    </nav>    
+    </nav>       
   </header>
 
   <main>
+    <section class="banniere">
+      <img src="banniere.jpg" alt="Bannière du site de prêt">
+    </section>
+    
     <section>
       <h2>Solutions de prêt flexibles</h2>
       <p>Nous proposons des prêts adaptés à vos besoins : personnel, auto, urgence et plus encore.</p>
     </section>
 
     <section>
-      <h2>Pourquoi nous choisir ?</h2>
-      <ul>
-        <li>Réponse rapide</li>
-        <li>Taux compétitifs</li>
-        <li>Accompagnement personnalisé</li>
-      </ul>
-    </section>
-
-    <section>
       <h2>Nos offres de prêt</h2>
       <div class="offres">
         <div class="offre">
+          <img src="pret-personnel.jpg" alt="Prêt Personnel">
           <h3>Prêt Personnel</h3>
           <p>Financez vos projets à votre rythme avec un prêt souple et sans justificatifs.</p>
         </div>
+      <div class="offre">
+        <a href="pret-auto.html">
+          <img src="pret-auto.jpg" alt="Voiture financée par un prêt auto" style="width:100%; border-radius:8px;">
+          <h3>Prêt auto</h3>
+          <p>Financez l'achat de votre véhicule neuf ou d’occasion à un taux avantageux.</p>
+        </a>
+      </div>        
         <div class="offre">
-          <h3>Prêt Auto</h3>
-          <p>Roulez vers votre nouvelle voiture avec des conditions avantageuses.</p>
-        </div>
-        <div class="offre">
+          <img src="pret-etudiant.jpg" alt="Prêt Étudiant">
           <h3>Prêt Étudiant</h3>
           <p>Soutenez vos études grâce à un prêt adapté aux jeunes et aux familles.</p>
         </div>
       </div>
     </section>
 
-    <!-- Section Calculateur de Prêt -->
     <section id="calculateur">
       <h2>Calculateur de Prêt</h2>
       <form id="form-prets">
@@ -78,30 +83,127 @@
 
       <div id="resultat" style="margin-top: 20px;">
         <p id="mensualite"></p>
-      </div>
+      </div>    
     </section>
+    
+    <p style="text-align: center; margin-top: 20px;">
+      <a href="demande-pret.html" class="btn">Faire une demande de prêt</a>
+    </p>    
 
-    <!-- Section Contact -->
+    <section id="demande-pret">
+      <h2>Faites votre demande de prêt</h2>
+      <form id="form-demande" action="#" method="POST">
+        <label for="nom">Nom complet :</label>
+        <input type="text" id="nom" name="nom" placeholder="Votre nom complet" required>
+    
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email" placeholder="Votre adresse email" required>
+    
+        <label for="montant-demande">Montant du prêt (€) :</label>
+        <input type="number" id="montant-demande" name="montant-demande" placeholder="Ex : 5000" required>
+    
+        <label for="duree-demande">Durée du prêt (mois) :</label>
+        <input type="number" id="duree-demande" name="duree-demande" placeholder="Ex : 24" required>
+    
+        <button type="submit">Envoyer la demande</button>
+      </form>
+    </section>    
+
     <section>
+      <h2>Nos services de prêt</h2>
+      <p>Nous proposons des prêts adaptés à vos besoins. <a href="services.html">Découvrez nos services</a>.</p>
+    </section>   
+    
+    <section>
+      <h2>Pourquoi nous choisir ?</h2>
+      <ul>
+        <li>Réponse rapide</li>
+        <li>Taux compétitifs</li>
+        <li>Accompagnement personnalisé</li>
+      </ul>
+    </section>
+    
+    <section id="temoignages">
+      <h2>Ils nous ont fait confiance</h2>
+      <div class="temoignage">
+        <p>"Grâce à ce prêt, j'ai pu financer l'achat de ma voiture. Processus rapide et simple!"</p>
+        <p><strong>Jean Dupont</strong>, Client satisfait</p>
+      </div>
+      <div class="temoignage">
+        <p>"Le prêt étudiant m'a permis de poursuivre mes études sereinement. Merci !"</p>
+        <p><strong>Marie Lemoine</strong>, Étudiante</p>
+      </div>
+      <div class="temoignage">
+        <p>"Service très réactif et conditions avantageuses. Je recommande vivement !"</p>
+        <p><strong>Paul Martin</strong>, Client satisfait</p>
+      </div>
+    </section>    
+    
+    <section id="contact">
       <h2>Contactez-nous</h2>
-      <form>
-        <label for="nom">Nom :</label><br>
-        <input type="text" id="nom" name="nom" placeholder="Votre nom"><br><br>
-
-        <label for="email">Email :</label><br>
-        <input type="email" id="email" name="email" placeholder="Votre adresse email"><br><br>
-
-        <label for="message">Message :</label><br>
-        <textarea id="message" name="message" rows="4" placeholder="Votre message..."></textarea><br><br>
-
+      <form id="form-contact" action="#" method="POST">
+        <label for="nom-contact">Nom :</label>
+        <input type="text" id="nom-contact" name="nom-contact" placeholder="Votre nom" required>
+    
+        <label for="email-contact">Email :</label>
+        <input type="email" id="email-contact" name="email-contact" placeholder="Votre adresse email" required>
+    
+        <label for="message-contact">Message :</label>
+        <textarea id="message-contact" name="message-contact" placeholder="Votre message..." rows="5" required></textarea>
+    
         <button type="submit">Envoyer</button>
       </form>
-    </section>
+    </section>    
+
+    <section id="faq">
+      <h2>Questions fréquentes</h2>
+      <div class="question">
+        <h4>Quels documents sont nécessaires pour une demande de prêt ?</h4>
+        <p>Une pièce d'identité, un justificatif de domicile et des justificatifs de revenus sont généralement requis.</p>
+      </div>
+      <div class="question">
+        <h4>Quel est le délai de réponse après une demande ?</h4>
+        <p>Nous répondons à votre demande sous 24 à 48 heures ouvrées.</p>
+      </div>
+      <div class="question">
+        <h4>Puis-je rembourser mon prêt par anticipation ?</h4>
+        <p>Oui, vous pouvez rembourser tout ou partie de votre prêt à tout moment, sans frais supplémentaires.</p>
+      </div>
+
+      <div class="share-buttons">
+        
+      </div>  
+
+    </section>    
   </main>
 
   <footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h4>À propos</h4>
+      <p>Nous aidons des milliers de personnes à concrétiser leurs projets grâce à des prêts adaptés à leurs besoins.</p>
+    </div>
+
+    <div class="footer-section">
+      <h4>Liens utiles</h4>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h4>Contact</h4>
+      <p>Email : abulmrs25@gmail.com</p>
+      <p>Téléphone : +33 1 23 45 67 89</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
     <p>© 2025 Mon Site de Prêt - Tous droits réservés</p>
-  </footer>
+  </div>
+</footer>
 
   <!-- Script pour le Calculateur -->
   <script>
@@ -138,5 +240,18 @@ resultatElement.classList.add('visible');
 
     });
   </script>
+
+  <script>
+    // Ajouter un comportement au formulaire de contact
+    document.querySelector('section form').addEventListener('submit', function(e) {
+      e.preventDefault(); // Empêche l'envoi réel du formulaire
+    
+      alert("Merci ! Votre message a bien été envoyé.");
+      
+      // (Optionnel) Tu peux vider les champs après l'envoi :
+      this.reset();
+    });
+    </script>
+    
 </body>
 </html>
